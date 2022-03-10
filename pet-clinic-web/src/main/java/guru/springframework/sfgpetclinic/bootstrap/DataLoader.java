@@ -4,8 +4,6 @@ import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.model.Vet;
 import guru.springframework.sfgpetclinic.services.OwnerService;
 import guru.springframework.sfgpetclinic.services.VetService;
-import guru.springframework.sfgpetclinic.services.map.OwnerServiceMap;
-import guru.springframework.sfgpetclinic.services.map.VetServiceMap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -16,10 +14,9 @@ public class DataLoader implements CommandLineRunner {
     public final VetService vetService;
     public final OwnerService ownerService;
 
-    public DataLoader(){
-
-        vetService = new VetServiceMap();
-        ownerService = new OwnerServiceMap();
+    public DataLoader(VetService vetService, OwnerService ownerService){
+        this.vetService = vetService;
+        this.ownerService = ownerService;
     }
 
     @Override
