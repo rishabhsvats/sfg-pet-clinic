@@ -1,7 +1,6 @@
 package guru.springframework.sfgpetclinic.model;
 
 import lombok.*;
-import org.hibernate.annotations.Cache;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -17,7 +16,7 @@ import java.time.LocalDate;
 public class Visit extends  BaseEntity{
 
     @Column(name = "date")
-    private LocalDate localDate;
+    private LocalDate date;
 
     @Column(name = "description")
     private String description;
